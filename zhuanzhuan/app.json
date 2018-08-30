@@ -1,0 +1,18 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/sellPages/sellFirst/sellFirst",
+    "pages/sellPages/sellSecond/sellSecond",
+    "pages/sellPages/sellThird/sellThird",
+    "pages/sellPages/sellFouth/sellFouth",
+    "pages/search/search"
+  ],
+  "window":{
+    "enablePullDownRefresh":true,
+    "onReachBottomDistance":50,
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#FF5654",
+    "navigationBarTitleText": "转转二手交易网",
+    "navigationBarTextStyle":"white"
+  }
+}

@@ -1,0 +1,69 @@
+
+<scroll-view>
+    <!-- 顶部 -->
+    <image class="sell-fouth-scroll-top" src="http://www.gether.cn/zhuanzhuan/image/sellFouthImg/background.png"></image>
+
+    <!-- icon框 -->
+    <view class="sell-fouth-scroll-icon">
+        <view class="sell-fouth-scroll-icon-top">
+            <view class="sell-fouth-scroll-icon-top-out" wx:for="{{icons}}" wx:for-item="icon" wx:key="key">
+                <image class="sell-fouth-scroll-icon-top-img" src="{{icon.img}}"></image>
+                <view class="sell-fouth-scroll-icon-bottom-text">{{icon.text}}</view>
+            </view>
+        </view>
+        <view class="sell-fouth-scroll-icon-bottom">
+            <view class="sell-fouth-scroll-icon-bottom-left">
+                这些书我们不收<text class="sell-fouth-scroll-icon-bottom-blue">（必读）</text>
+            </view>
+            <view class="sell-fouth-scroll-icon-bottom-right">></view>
+        </view>
+    </view>
+
+    <!-- 书盒子 -->
+    <view class="sell-fouth-scroll-book-box">
+        <view class="sell-fouth-scroll-book-box-top">
+            <view class="sell-fouth-scroll-book-box-top-left">
+                本周高价回收榜
+            </view>
+            <view class="sell-fouth-scroll-book-box-top-right">
+                全部榜单 >
+            </view>
+        </view>
+        <view class="sell-fouth-scroll-book-box-bottom" wx:for="{{sellFouthScrollBooks}}" wx:for-item="sellFouthScrollBook" wx:key="key">
+            <image class="sell-fouth-scroll-book-box-bottom-img" src="{{sellFouthScrollBook.src}}"></image>
+            <view class="sell-fouth-scroll-book-box-bottom-message">
+                <view class="sell-fouth-scroll-book-bottom-message-text1">{{sellFouthScrollBook.text1}}</view>
+                <view class="sell-fouth-scroll-book-bottom-message-text2">{{sellFouthScrollBook.text2}}</view>
+                <view class="sell-fouth-scroll-book-bottom-message-text3-box">
+                    <view class="sell-fouth-scroll-book-bottom-message-text3-box-text1">回收价</view>
+                    <view class="sell-fouth-scroll-book-bottom-message-text3-box-text2">¥{{sellFouthScrollBook.price}}</view> 
+                    <view class="sell-fouth-scroll-book-bottom-message-text3-box-text3">{{sellFouthScrollBook.discount}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 灰色空白 -->
+    <view class="sell-fouth-scroll-margin"></view>
+    <!-- 按钮 -->
+    <view class="sell-fouth-scroll-btn">
+        <view class="sell-fouth-scroll-btn-left">
+            <image class="sell-fouth-scroll-btn-left-img" src="http://www.gether.cn/zhuanzhuan/image/sellFouthImg/user-btn.png"></image>
+            <view class="sell-fouth-scroll-btn-left-text">我的</view>
+        </view>
+        <view class="sell-fouth-scroll-btn-center">搜索卖书</view>
+        <view class="sell-fouth-scroll-btn-right">扫码卖书</view>
+    </view>
+
+    <view class="sell-fouth-scroll-btn-text" hidden="{{ sellFouthHide }}">
+        扫过的书在这,去<text class="sell-fouth-scroll-btn-text-black">"我的-回收车"</text>看看
+        <view class="sell-fouth-scroll-btn-text-boult"></view>
+        <view class="sell-fouth-scroll-btn-text-click" bindtap="sellFouthScrollBtn">x</view>
+    </view>
+
+    <image class="sell-fouth-scroll-btn-image" src="http://www.gether.cn/zhuanzhuan/image/sellFouthImg/packet.png"></image>
+    
+    <!-- 返回首页 -->
+    <view class="return" bindtap="fouthReturnIndex">
+        返回首页
+    </view>
+</scroll-view>

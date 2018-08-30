@@ -1,0 +1,226 @@
+/* 顶部 */
+.sell-fouth-scroll-top{
+    width: 100%;
+    height: 320rpx;
+}
+
+/* icon框 */
+.sell-fouth-scroll-icon{
+    width: 100%;
+    height: 360rpx;
+    position: relative;
+    top: -1rem;
+    background-color: #FFFFFF;
+}
+.sell-fouth-scroll-icon-top{
+    width: 100%;
+    height: 260rpx;
+    box-sizing: border-box;
+    border-bottom: 4rpx solid #b5b5b5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.sell-fouth-scroll-icon-top-out{
+    width: 100%;
+    height: 240rpx;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20rpx;
+}
+.sell-fouth-scroll-icon-top-img{
+    width: 60rpx;
+    height: 60rpx;
+    display: block;
+}
+.sell-fouth-scroll-icon-bottom-text{
+    width: 160rpx;
+    height: 80rpx;
+    font-size: 32.4rpx;
+    color: #E0E0E0;
+    text-align: center;
+}
+.sell-fouth-scroll-icon-bottom{
+    width: 100%;
+    height: 120rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20rpx;
+}
+.sell-fouth-scroll-icon-bottom-blue{
+    color: #86a8dc;
+}
+.sell-fouth-scroll-icon-bottom-right{
+    color: #919191;
+}
+/* 书盒子 */
+.sell-fouth-scroll-book-box{
+    width: 100%;
+    height: 600rpx;
+}
+.sell-fouth-scroll-book-box-top{
+    width: 100%;
+    height: 120rpx;
+    border-bottom: 4rpx solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20rpx;
+}
+.sell-fouth-scroll-book-box-top-left{
+    font-weight: bold;
+    color: #000000;
+}
+.sell-fouth-scroll-book-box-top-right{
+    color: #4c4648;
+}
+.sell-fouth-scroll-book-box-bottom{
+    width: 100%;
+    height: 240rpx;
+    box-sizing: border-box;
+    border-bottom:8rpx solid #b5b5b5;
+    display: flex;
+    align-items: center;
+}
+.sell-fouth-scroll-book-box-bottom-img{
+    width: 120rpx;
+    height: 200rpx;
+    margin-left: 20rpx;
+}
+.sell-fouth-scroll-book-box-bottom-message{
+    width: 320rpx;
+    height: 200rpx;
+    margin-left: 40rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.sell-fouth-scroll-book-bottom-message-text1{
+    font-size: 36rpx;
+    color: #010101;
+}
+.sell-fouth-scroll-book-bottom-message-text2{
+    font-size: 32rpx;
+    color: #b5b5b5;
+}
+.sell-fouth-scroll-book-bottom-message-text3-box{
+    width: 100%;
+    height: 80rpx;
+    font-size: 28rpx;
+    color: #b5b5b5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sell-fouth-scroll-book-bottom-message-text3-box-text2{
+    font-size: 32rpx;
+    color: #e15551;
+}
+.sell-fouth-scroll-book-bottom-message-text3-box-text3{
+    font-size: 24rpx;
+    background-color: #fbf0ec;
+    color: #eb728a;
+    padding: 4rpx;
+}
+.sell-fouth-scroll-margin{
+    width: 100%;
+    height: 200rpx;
+    background-color: #f2f2f2;
+}
+.sell-fouth-scroll-btn{
+    width: 100%;
+    height: 120rpx;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+}
+.sell-fouth-scroll-btn-left{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.sell-fouth-scroll-btn-left-img{
+    width: 40rpx;
+    height: 40rpx;
+}
+.sell-fouth-scroll-btn-left-text{
+    font-size: 32rpx;
+    color: #878686;
+}
+.sell-fouth-scroll-btn-center{
+    border:0.1rem solid #878686;
+    color: #878686;
+    padding: 8rpx;
+    border-radius: 16rpx;
+}
+.sell-fouth-scroll-btn-right{
+    border-radius: 16rpx;
+    background-color: #ff5654;
+    color: #ffffff;
+    padding: 8rpx;
+}
+.sell-fouth-scroll-btn-text{
+    position: fixed;
+    left: 10%;
+    bottom: 140rpx;
+    background-color: #FFFFFF;
+    color: #b5b5b5;
+    width: 600rpx;
+    height: 120rpx;
+    font-size: 32rpx;
+    text-align: center;
+    line-height: 120rpx;
+    border-radius: 20rpx 20rpx 20rpx 0;
+    box-sizing: border-box;
+}
+.sell-fouth-scroll-btn-text-boult{
+    width: 0;
+    height: 0;
+    border-top: 20rpx solid #FFFFFF;
+    border-right: 20rpx solid transparent;
+}
+.sell-fouth-scroll-btn-text-black{
+    color: #010101;
+    font-size: 36rpx;
+}
+.sell-fouth-scroll-btn-text-click{
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 40rpx;
+    top: 0;
+    right: -0.5rem;
+    color: #010101;
+    border: 0.4rpx solid black;
+    font-size: 40rpx;
+}
+.sell-fouth-scroll-btn-image{
+    width: 120rpx;
+    height: 120rpx;
+    position: fixed;
+    right: 0;
+    bottom: 180rpx;
+    animation: sellFouthBiger 2s;
+}
+@keyframes sellFouthBiger{
+    0% { width: 120rpx;height: 120rpx;transform: rotate(0);}
+    25% { width: 140rpx;height: 140rpx; transform: rotate(5deg);}
+    50% { width: 120rpx;height: 120rpx;transform: rotate(0);}
+    75% { width: 140rpx;height: 140rpx;transform: rotate(-5deg);}
+    100% { width: 120rpx;height: 120rpx;transform: rotate(0deg);}
+}
+.none{
+    display: none;
+}

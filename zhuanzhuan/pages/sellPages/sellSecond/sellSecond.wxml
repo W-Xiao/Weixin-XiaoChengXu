@@ -1,0 +1,129 @@
+<scroll-view>
+    <!-- 顶部广告栏 -->
+    <view class="sell-second-top">
+        <view class="sell-second-top-top">
+            旧手机高价 保你卖出
+        </view>
+        <view class="sell-second-top-bottom">
+            <view class="sell-second-top-bottom-text" wx:for="{{sellSecondTopBottomTexts}}" wx:key="key" wx:for-item="sellSecondTopBottomText">
+                <image class="sell-second-top-bottom-icon" src="{{sellSecondTopBottomText.img}}"></image>
+                {{sellSecondTopBottomText.text}}
+            </view>
+        </view>
+    </view>
+    <view class="sell-second-radius">
+        <image src="http://www.gether.cn/zhuanzhuan/image/sellSecondImg/moeny.png" class="sell-second-radius-image"></image>
+    </view>
+
+    <!-- 中部白色框 -->
+    <view class="sell-second-sellMessage">
+        <view class="sell-second-sellMessage-top">
+            <view class="sell-second-sellMessage-top-line"></view>
+            <view class="sell-second-sellMessage-top-text">如果卖iPhone6s</view>
+            <view class="sell-second-sellMessage-top-line"></view>
+        </view>
+        <view class="sell-second-sellMessage-center">
+            <view class="sell-second-sellMessage-center-box">
+                <view class="sell-second-sellMessage-center-box-text">
+                    <text class="sell-second-sellMessage-circle">·</text>最高成交价
+                </view>
+                <view class="sell-second-sellMessage-pay center-border">¥1591</view>
+            </view>
+            <view class="sell-second-sellMessage-center-box">
+                <view class="sell-second-sellMessage-center-box-text">
+                    <text class="sell-second-sellMessage-circle">·</text>提前拿预付款
+                </view>
+                <view class="sell-second-sellMessage-pay">¥498</view>
+            </view>
+        </view>
+        <view class="sell-second-sellMessage-bottom">
+            我要卖掉其他手机>
+        </view>
+    </view>
+
+    <!-- 第一个文字 -->
+    <view class="sell-second-margin">
+        为什么在这里卖超省心
+        <view class="sell-second-margin-line"></view>
+    </view>
+
+    <!-- 中部icon框 -->
+    <view class="sell-second-btn-icon">
+        <view class="sell-second-btn-icon-top">什么都不需要您做,我们全包</view>
+        <view class="sell-second-btn-icon-bottom">
+            <view class="sell-second-btn-icon-box" wx:for="{{sellSecondBtnIconBoxs}}" wx:key="key" wx:for-item="sellSecondBtnIconBox">
+                <image class="sell-second-btn-icon-icon" src="{{sellSecondBtnIconBox.src}}"></image>
+                <view class="sell-second-btn-icon-text">{{sellSecondBtnIconBox.text}}</view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 中部质检师 -->
+    <view class="sell-second-person">
+        <view class="sell-second-person-left">
+            <image src="http://www.gether.cn/zhuanzhuan/image/engineer-image/engineer1.jpg" class="sell-second-person-left-img"></image>
+            <image src="http://www.gether.cn/zhuanzhuan/image/engineer-image/engineer2.jpg" class="sell-second-person-left-img"></image>
+            <image src="http://www.gether.cn/zhuanzhuan/image/engineer-image/engineer3.jpg" class="sell-second-person-left-img"></image>
+        </view>
+        <view class="sell-second-person-center">
+            <view class="sell-second-person-center-top">
+                <image src="http://www.gether.cn/zhuanzhuan/image/sellSecondImg/shield.png" class="sell-second-person-center-top-shield"></image>
+                <text class="sell-second-person-center-green-text">转转&富士康联合</text> 制定质检标准
+            </view>
+            <view class="sell-second-person-center-bottom"><text class="sell-second-person-center-green-text">500+</text>质检师 <text class="sell-second-person-center-green-text">100+</text>验机中心</view>
+        </view>
+        <view class="sell-second-person-right">></view>
+    </view>
+
+    <view class="sell-second-gray-line"></view>
+
+    <!-- 第二个文字 -->
+    <view class="sell-second-margin">
+        为什么能卖出超高价
+        <view class="sell-second-margin-line"></view>
+    </view>
+
+    <view class="sell-second-bottom-icon-box">
+        <view class="sell-second-bottom-icon-box-out" wx:for="{{sellSecondBottomIconBoxOuts}}" wx:key="key" wx:for-item="sellSecondBottomIconBoxOut">
+            <view class="sell-second-bottom-icon-box-out-left">
+                <image src="{{sellSecondBottomIconBoxOut.img}}" class="sell-second-bottom-icon-box-out-left-img"></image>
+            </view>
+            <view class="sell-second-bottom-icon-box-out-right">
+                <view class="sell-second-bottom-icon-box-out-right-top">
+                    {{sellSecondBottomIconBoxOut.text1}}
+                </view>
+                <view class="sell-second-bottom-icon-box-out-right-bottom">
+                    {{sellSecondBottomIconBoxOut.text2}}
+                </view>
+            </view>
+            <view wx:if="{{sellSecondBottomIconBoxOut.id == 2}}" class="sell-second-bottom-icon-box-out-right2">
+                <view class="sell-second-bottom-icon-box-out-right2-top">去卖场></view>
+                <view class="sell-second-bottom-icon-box-out-right2-bottom">164383人正在竞拍</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="sell-second-bottom-total-num">
+        <view class="sell-second-bottom-total-num-line"></view>
+        <view class="sell-second-bottom-total-num-text">
+            累计帮助<text class="sell-second-bottom-total-num-text-color">1,517,276</text>位用户卖出手机
+        </view>
+        <view class="sell-second-bottom-total-num-line"></view>
+    </view>
+
+    <view class="sell-second-fixed-box">
+        <view class="sell-second-fixed-btn">
+            <image class="sell-second-fixed-btn-top" src="http://www.gether.cn/zhuanzhuan/image/sellSecondImg/fixedbtn1.png"></image>
+            <view class="sell-second-fixed-btn-bottom">联系客服</view>
+        </view>
+        <view class="sell-second-fixed-btn">
+            <image class="sell-second-fixed-btn-top" src="http://www.gether.cn/zhuanzhuan/image/sellSecondImg/fixedbtn2.png"></image>
+            <view class="sell-second-fixed-btn-bottom">我的订单</view>
+        </view>
+        <view class="sell-second-fixed-btn2">旧手机换钱</view>
+    </view>
+
+    <view class="return" bindtap="secondReturnIndex">
+         返回首页
+    </view>
+</scroll-view>

@@ -1,0 +1,344 @@
+.sell-second-top{
+    width: 100%;
+    height: 240rpx;
+    background: linear-gradient(to right,#ff6867,#ff8b8c);
+}
+.sell-second-top-top{
+    width: 100%;
+    height: 200rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60rpx;
+    color: #FFFFFF;
+}
+.sell-second-top-bottom{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 32rpx;
+    color: #FFFFFF;
+}
+.sell-second-top-bottom-text{
+    display: flex;
+    align-items: center;
+    width: 240rpx;
+    justify-content: center;
+}
+.sell-second-top-bottom-text:nth-of-type(1),.sell-second-top-bottom-text:nth-of-type(2){
+    border-right:4rpx dotted #FFFFFF;
+}
+.sell-second-top-bottom-icon{
+    width: 48rpx;
+    height: 48rpx;
+}
+.sell-second-radius{
+    width: 100%;
+    height: 240rpx;
+    background: linear-gradient(to right,#ff6867,#ff8b8c);
+    border-radius: 0 0 50% 50%;
+}
+.sell-second-radius-image{
+    width: 100%;
+    height: 120rpx;
+}
+.sell-second-sellMessage{
+    width: 90%;
+    height: 320rpx;
+    border-radius: 20rpx;
+    margin: auto;
+    position: relative;
+    top: -120rpx;
+    box-shadow: 0 8rpx 12rpx #E0E0E0;
+    background-color: #FFFFFF;
+}
+.sell-second-sellMessage-top{
+    width:70%;
+    height:80rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+}
+.sell-second-sellMessage-center{
+    display: flex;
+    justify-content: space-around;
+}
+.sell-second-sellMessage-text{
+    color: #504a4d;
+    font-size: 4rpx;
+}
+.sell-second-sellMessage-top-line{
+    width: 1rem;
+    height: 4rpx;
+    background-color: #d1d1d1;
+}
+.sell-second-sellMessage-center{
+    width: 100%;
+}
+.sell-second-sellMessage-center-box-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32rpx;
+    color: #c1c1c1;
+}
+.sell-second-sellMessage-center-box{
+    width: 50%;
+    text-align: center;
+    height: 160rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.sell-second-sellMessage-circle{
+    font-size: 120rpx;
+    color:#ffe8e8;
+}
+.sell-second-sellMessage-pay{
+    width: 100%;
+    font-size: 60rpx;
+    color: #ff5647;
+    display: block;
+}
+.center-border{
+    border-right: 4rpx dotted #ff8b8c;
+}
+.sell-second-sellMessage-bottom{
+    margin-top: 20rpx;
+    color: #77ace9;
+    font-size: 32rpx;
+    text-align: center;
+}
+.sell-second-margin{
+    width: 100%;
+    text-align: center;
+    font-size: 48rpx;
+    color: #333333;
+    margin-bottom: 80rpx;
+}
+.sell-second-margin-line{
+    width: 80rpx;
+    height: 16rpx;
+    background-color: #ff5647;
+    margin: auto;
+}
+.sell-second-btn-icon{
+    width: 94%;
+    height: 240rpx;
+    margin: auto;
+    border:1px solid #ffd0ce;
+    position: relative;
+}
+.sell-second-btn-icon-top{
+    color: #9b9b9b;
+    position: absolute;
+    top:-0.7rem;
+    left: 20%;
+    font-size: 0.9rem;
+    background-color: #FFFFFF;
+    display: flex;
+}
+.sell-second-btn-icon-bottom{
+    width: 100%;
+    height: 160rpx;
+    margin-top: 40rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.sell-second-btn-icon-box{
+    width:120rpx;
+    height: 160rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sell-second-btn-icon-icon{
+    width: 120rpx;
+    height: 120rpx;
+}
+.sell-second-btn-icon-text{
+    font-size: 0.4rem;
+    color: #c5c6c7;
+}
+.sell-second-person{
+    width: 96%;
+    height: 120rpx;
+    background-color: #f8f8f8;
+    margin: auto;
+    margin-top: 40rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #969696;
+    margin-bottom: 40rpx;
+}
+.sell-second-person-left{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sell-second-person-left-img{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+}
+.sell-second-person-left-img:nth-of-type(2){
+    position: relative;
+    left: -18rpx;
+    z-index: 1;
+}
+.sell-second-person-left-img:nth-of-type(3){
+    position: relative;
+    left: -30rpx;
+    z-index: 1;
+}
+.sell-second-person-center{
+    width: 60%;
+}
+.sell-second-person-center-top{
+    font-size: 28rpx;
+}
+.sell-second-person-center-bottom{
+    font-size: 24rpx;
+}
+.sell-second-person-center-green-text{
+    color: #43c989;
+}
+.sell-second-person-center-top{
+    display: flex;
+    align-items: center;
+}
+.sell-second-person-center-top-shield{
+    width: 40rpx;
+    height: 40rpx;
+}
+.sell-second-bottom-icon-box{
+    width: 100%;
+    height: 600rpx;
+}
+.sell-second-bottom-icon-box-out{
+    width: 100%;
+    height: 200rpx;
+    border-bottom: 4rpx solid #eaeaea;
+    display: flex;
+    align-items: center;
+}
+.sell-second-gray-line{
+    width: 100%;
+    height: 20rpx;
+    background-color: #f8f8f8;
+    margin-bottom: 40rpx;
+}
+.sell-second-bottom-icon-box-out-left{
+    width: 200rpx;
+    height: 120rpx;
+    display: flex;
+    justify-content: center;
+}
+.sell-second-bottom-icon-box-out-left-img{
+    width: 120rpx;
+    height: 120rpx;
+}
+.sell-second-bottom-icon-box-out-right{
+    width: 60%;
+    height: 120rpx;
+}
+.sell-second-bottom-icon-box-out-right-top{
+    color: #4e5054;
+    font-size: 32rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+.sell-second-bottom-icon-box-out-right-bottom{
+    color: #9b9b9b;
+    font-size: 24rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+.sell-second-bottom-icon-box-out-right2{
+    width: 160rpx;
+    height: 120rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.sell-second-bottom-icon-box-out-right2-top{
+    width: 120rpx;
+    height: 48rpx;
+    border: 0.4rpx solid #ff5555;
+    border-radius: 60rpx;
+    font-size: 24rpx;
+    text-align: center;
+    line-height: 48rpx;
+    color: #ff5555;
+}
+.sell-second-bottom-icon-box-out-right2-bottom{
+    font-size: 18rpx;
+    color: #ff5555;
+}
+.sell-second-bottom-total-num{
+    width: 100%;
+    height: 400rpx;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 120rpx;
+}
+.sell-second-bottom-total-num-line{
+    width: 80rpx;
+    height: 4rpx;
+    background-color: #c6c6c6;
+}
+.sell-second-bottom-total-num-text{
+    color: #6d6f73;
+    font-size: 32rpx;
+}
+.sell-second-bottom-total-num-text-color{
+    color: #3f4246;
+    font-size: 40rpx;
+}
+.sell-second-fixed-box{
+    width: 100%;
+    height: 120rpx;
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.sell-second-fixed-btn{
+    width: 20%;
+    height: 120rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.sell-second-fixed-btn-top{
+    width: 60rpx;
+    height: 60rpx;
+}
+.sell-second-fixed-btn-bottom{
+    font-size: 24rpx;
+    color: #928e90;
+}
+.sell-second-fixed-btn2{
+    width: 60%;
+    height: 96rpx;
+    background-color: #ff5647;
+    color: #ffffff;
+    text-align: center;
+    line-height: 96rpx;
+    border-radius: 12rpx;
+}
+.none{
+    display: none;
+}

@@ -1,0 +1,176 @@
+<import src="../../template/template.wxml" />
+<scroll-view>
+    <!-- 顶部公告 -->
+    <view class="sell-third-top-text">
+        公告: 自7月21日起，完成回收订单即可获得¥15现金红包(限新用户首单)、20元优惠卷和电子环保证书。
+    </view>
+
+    <view class="sell-third-top-image-box">
+        <image src="http://www.gether.cn/zhuanzhuan/image/sellThirdImg/background.png" class="sell-third-top-image">
+
+        </image>
+    </view>
+
+    <!-- 顶部icon -->
+    <view class="sell-third-top-icon">
+        <view class="sell-third-top-icon-left" wx:for="{{sellThirdTopIconLefts}}" wx:key="key" wx:for-item="sellThirdTopIconLeft">
+            <image class="sell-third-top-icon-left-image" src="{{sellThirdTopIconLeft.src}}"></image>
+            <view class="sell-third-top-icon-left-text">{{sellThirdTopIconLeft.text}}</view>
+        </view>
+        <view class="sell-third-top-icon-right">></view>
+    </view>
+
+    <!-- 旧衣回收流程 -->
+    <template is="thirdSellTopicStyle" data="{{...thirdSellTopicStyleName1}}"></template>
+
+    <!-- 流程详细盒子 -->
+    <view class="sell-third-recycle-box">
+        <view class="sell-third-circle-line-box">
+            <view class="sell-third-circle-line-box-circle"></view>
+            <view class="sell-third-circle-line-box-line"></view>
+            <view class="sell-third-circle-line-box-circle"></view>
+            <view class="sell-third-circle-line-box-line"></view>
+            <view class="sell-third-circle-line-box-circle"></view>
+            <view class="sell-third-circle-line-box-line"></view>
+            <view class="sell-third-circle-line-box-circle"></view>
+        </view>
+        <view class="sell-third-circle-line-box-texts">
+            <view class="sell-third-circle-line-box-text">一键预约</view>
+            <view class="sell-third-circle-line-box-text">免费上门取件</view>
+            <view class="sell-third-circle-line-box-text">回收完成</view>
+            <view class="sell-third-circle-line-box-text">领取奖励</view>
+        </view>
+        <view class="sell-third-circle-line-box-remark-text">
+            备注旧衣上门回收及旧衣处理服务将由"飞蚂蚁"合作提供回收范围:鞋包、包包、床单被罩、毛绒玩具等纺织品。
+        </view>
+    </view>
+
+    <!-- 环保达人 -->
+    <template is="thirdSellTopicStyle" data="{{...thirdSellTopicStyleName2}}"></template>
+
+    <!-- 环保达人详细切换菜单 -->
+    <view class="sell-third-scroll-change-box">
+        <view class="sell-third-scroll-change-box-top">
+            <view class='sell-third-scroll-change-box-top-btn {{ thirdTab == 0 ? "sell-third-scroll-change-box-top-btn-bg" : ""}}' data-third = "0" bindtap="swichThirdTab">
+                环保达人
+            </view>
+            <view class='sell-third-scroll-change-box-top-btn {{ thirdTab == 1 ? "sell-third-scroll-change-box-top-btn-bg" : ""}}' data-third = "1" bindtap="swichThirdTab">
+                明星达人
+            </view>
+        </view>
+        <swiper class='sell-third-scroll-change-box-center-left {{ thirdTab == 0 ? "" : "none"}}' data-third = "0" vertical="{{true}}" autoplay="{{true}}" circular="{{true}}" interval="0" duration="3000">
+            <swiper-item class="sell-third-scroll-change-box-center-left-item" wx:for="{{sellThirdScrollChangeBoxCenterLeftItems}}" wx:key="key">
+                <view class="sell-third-scroll-change-box-center-left-item-flex" wx:for="{{sellThirdScrollChangeBoxCenterLeftItemFlexs}}" wx:for-item="sellThirdScrollChangeBoxCenterLeftItemFlex" wx:key="key">
+                    <view class="sell-third-scroll-change-box-center-left-item-left">
+                        <image src="{{sellThirdScrollChangeBoxCenterLeftItemFlex.img}}" class="sell-third-scroll-change-box-center-left-item-left-img"></image>
+                        <view>
+                            <view class="sell-third-scroll-change-box-center-left-item-left-text-one">{{sellThirdScrollChangeBoxCenterLeftItemFlex.name}}</view>
+                            <view class="sell-third-scroll-change-box-center-left-item-left-text-two">{{sellThirdScrollChangeBoxCenterLeftItemFlex.place}}</view>
+                        </view>
+                    </view>
+                    <view class="sell-third-scroll-change-box-center-left-item-center">
+                        <view class="sell-third-scroll-change-box-center-left-item-left-text-one">减碳</view>
+                        <view class="sell-third-scroll-change-box-center-left-item-left-text-two">{{sellThirdScrollChangeBoxCenterLeftItemFlex.kg}}</view>
+                    </view>
+                    <view class="sell-third-scroll-change-box-center-left-item-right">
+                        <image src="{{sellThirdScrollChangeBoxCenterLeftItemFlex.img2}}" class="sell-third-scroll-change-box-center-left-item-left-img"></image>
+                    </view>
+                </view>
+            </swiper-item>
+        </swiper>
+
+        <view class='sell-third-scroll-change-box-center-right {{ thirdTab == 1 ? "" : "none"}}  {{ sellThirdMorestate == 1 ? "sell-third-scroll-change-box-center-more-show":""}}' data-third = "1">
+            <view class="sell-third-scroll-change-box-center-right-box" wx:for="{{sellThirdScrollChangeBoxCenterRightBoxs}}" wx:key="key" wx:for-item="sellThirdScrollChangeBoxCenterRightBox">
+                <view class="sell-third-scroll-change-box-center-right-box-left">
+                    <image class="sell-third-scroll-change-box-center-right-box-left-img" src="{{sellThirdScrollChangeBoxCenterRightBox.img1}}"></image>
+                    <view>
+                        <view class="sell-third-scroll-change-box-center-right-box-left-text1">{{sellThirdScrollChangeBoxCenterRightBox.name}}</view>
+                        <view class="sell-third-scroll-change-box-center-right-box-left-text2">{{sellThirdScrollChangeBoxCenterRightBox.place}}</view>
+                    </view>
+                </view>
+
+                <view class="sell-third-scroll-change-box-center-right-box-center">
+                    <view class="sell-third-scroll-change-box-center-right-box-center-text1">减碳</view>
+                    <view class="sell-third-scroll-change-box-center-right-box-center-text2">{{sellThirdScrollChangeBoxCenterRightBox.kg}}}</view>
+                </view>
+
+                <view class="sell-third-scroll-change-box-center-right-box-right">
+                    <image class="sell-third-scroll-change-box-center-right-box-right-img" src="{{sellThirdScrollChangeBoxCenterRightBox.img2}}"></image>
+                </view>
+            </view>
+            <view class='sell-third-scroll-change-box-center-more  {{ sellThirdMorestate == 1 ? "none":""}}' bindtap="sellThirdMore">v</view>
+        </view>
+
+        <view class="sell-third-scroll-change-box-bottom">
+            <view class="sell-third-scroll-change-box-bottom-left">回收处理</view>
+            <view class="sell-third-scroll-change-box-bottom-right">了解更多></view>
+        </view>
+    </view>
+
+    <!-- 旧衣现状 -->
+    <template is="thirdSellTopicStyle" data="{{...thirdSellTopicStyleName3}}"></template>
+
+    <!-- 旧衣现状详细盒子 -->
+    <view class="sell-third-bottom-clothes1-box">
+        <view class="sell-third-bottom-clothes1-box-out" wx:for="{{sellThirdBottomClothes1BoxOuts}}" wx:key="key" wx:for-item="sellThirdBottomClothes1BoxOut">
+            <view class="sell-third-bottom-clothes1-box-img-out">
+                <image class="sell-third-bottom-clothes1-box-img" src="{{sellThirdBottomClothes1BoxOut.img}}"></image>
+            </view>
+            <view class="sell-third-bottom-clothes1-box-text1">{{sellThirdBottomClothes1BoxOut.text1}}</view>
+            <view class="sell-third-bottom-clothes1-box-text2">
+                {{sellThirdBottomClothes1BoxOut.text2}}
+            </view>
+        </view>
+    </view>
+
+    <!-- 旧衣处理 -->
+    <template is="thirdSellTopicStyle" data="{{...thirdSellTopicStyleName4}}"></template>
+
+    <!-- 旧衣处理详细盒子 -->
+    <view class="sell-third-bottom-clothes1-box">
+        <view class="sell-third-bottom-clothes1-box-out" wx:for="{{sellThirdBottomClothes2BoxOuts}}" wx:key="key" wx:for-item="sellThirdBottomClothes2BoxOut">
+            <view class="sell-third-bottom-clothes1-box-img-out2">
+                <image class="sell-third-bottom-clothes1-box-img" src="{{sellThirdBottomClothes2BoxOut.img}}"></image>
+                <view class="sell-third-bottom-clothes1-box-text">{{sellThirdBottomClothes2BoxOut.text3}}</view>
+            </view>
+            <view class="sell-third-bottom-clothes1-box-text1">{{sellThirdBottomClothes2BoxOut.text1}}</view>
+            <view class="sell-third-bottom-clothes1-box-text2">
+                {{sellThirdBottomClothes2BoxOut.text2}}
+            </view>
+        </view>
+    </view>
+
+    <!-- 回收问答 -->
+    <template is="thirdSellTopicStyle" data="{{...thirdSellTopicStyleName5}}"></template>
+
+    <!-- 回收问答详细界面 -->
+    <view class="sell-third-bottom-answer">
+        <view class="sell-third-bottom-answer-box" wx:for="{{sellThirdBottomAnswers}}" wx:key="key" wx:for-item="sellThirdBottomAnswer">
+            <view class="sell-third-bottom-answer-box-circle"></view>
+            <view class="sell-third-bottom-answer-box-text">
+                {{sellThirdBottomAnswer.text}}
+            </view>
+        </view>
+        <view class="sell-third-bottom-answer-box-text2">了解更多 ></view>
+    </view>
+
+    <!-- 弹出红包 -->
+    <view class='sell-third-fixed-cover {{ thirdOutShowState == 0 ? "none":""}}'></view>
+    <view class='sell-third-fixed-packet {{ thirdOutShowState == 0 ? "none":""}}'>
+        <image src="http://www.gether.cn/zhuanzhuan/image/sellThirdImg/ready.png" class="sell-third-fixed-packet-img"></image>
+        <view class="sell-third-fixed-packet-btn" bindtap="thirdOutShow">x</view>
+    </view>
+
+    <!-- 底部按钮 -->
+    <view class="sell-third-fixed-bottom-btn">
+        <view class="sell-third-fixed-bottom-btn-one">
+            <view class='sell-third-fixed-bottom-btn-one-text {{sellThirdFixedBottomBtnState == 0 ? "none" :""}}' >
+                鞋服、包包、床单被罩、毛绒玩具等纺织品都可以回收哟
+                <view class="sell-third-fixed-bottom-btn-one-text-x" bindtap="sellThirdFixedBottomBtnOneText">
+                    x
+                </view>
+            </view>
+            预约回收</view>
+        <view class="sell-third-fixed-bottom-btn-one">我的订单</view>
+    </view>
+</scroll-view>

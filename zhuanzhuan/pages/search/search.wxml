@@ -1,0 +1,25 @@
+<view class="search-box">
+    <!-- 搜索部分 -->
+    <view class="top">
+        <view class="top-left">
+            <image class="search-img" src="http://www.gether.cn/zhuanzhuan/image/taohaohuo/t-biger.png"></image>
+            <input type="text" placeholder="{{ placeholder }}"  maxlength="20" class="top-input" value="{{ wxSearchData }}" bindinput="wxSearchInput" bindconfirm="wxSearchConfirm" />
+        </view>
+        <view class="top-right">
+            <navigator open-type="navigateBack" url="/pages/index/index">取消</navigator>
+        </view>
+    </view>
+
+    <view class="recommend-box">
+        <view class="recommend-topic">推荐搜索</view>
+        <view class="recommend-content-box" wx:for="{{ recommends }}" wx:for-item="item" wx:key="key">{{ item.text }}</view>
+    </view>
+
+    <view class="search-box" wx:if="{{ searches.length > 0}}">
+        <view class="search-topic">
+            <view class="search-text">历史搜索</view>
+            <image class="delate-img" src="http://www.gether.cn/zhuanzhuan/image/search/delate.png" bindtap="delate"></image>
+        </view>
+        <view class="search-content" wx:for="{{ searches }}" wx:for-item="item" wx:key="key">{{item.text}}</view>
+    </view>
+</view>

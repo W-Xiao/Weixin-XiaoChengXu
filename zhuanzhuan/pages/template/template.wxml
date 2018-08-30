@@ -1,0 +1,82 @@
+<!--template.wxml-->
+<template name="sellIcon">
+    <view class="sell-box-bottom-image">      
+        <view class="sell-box-bottom-image-out">
+            <view class="sell-box-bottom-content">
+                <view class="sell-box-bottom-text">{{Lname}}</view>
+                <view class="sell-box-bottom-text">{{Lnum}}</view>
+                <view class="sell-box-bottom-btn">我要卖</view>
+            </view>
+            <view>
+                <image src="{{Limg}}" class="sell-box-bottom-right-image"></image>
+            </view>
+        </view>
+        <view class="sell-box-bottom-image-out">
+            <view class="sell-box-bottom-content">
+                <view class="sell-box-bottom-text">{{Rname}}</view>
+                <view class="sell-box-bottom-text">{{Rnum}}</view>
+                <view class="sell-box-bottom-btn">我要卖</view>
+            </view>
+            <view>
+                <image src="{{Rimg}}" class="sell-box-bottom-right-image"></image>
+            </view>
+        </view>
+    </view>
+</template>
+
+<template name="thirdSellTopicStyle">
+    <view class="sell-third-topic-style">
+        <view class="sell-third-topic-style-lines">
+            <view class="sell-third-topic-style-line"></view>
+            <view class="sell-third-topic-style-line"></view>
+            <view class="sell-third-topic-style-line"></view>
+        </view>
+        <view class="sell-third-topic-style-text">{{thirdSellTopicStyleName}}</view>
+        <view class="sell-third-topic-style-lines">
+            <view class="sell-third-topic-style-line"></view>
+            <view class="sell-third-topic-style-line"></view>
+            <view class="sell-third-topic-style-line"></view>
+        </view>
+    </view>
+</template>
+
+<template name="loading">
+    <view class="loading-more-state0-out" wx:for="{{loadingboxs}}" wx:for-item="loadingbox" wx:key="key">
+        <view class="loading-more-state0-out-left">
+            <image class="thh-bottom-box-loading-more-out-image" src="{{loadingbox.img}}"></image>
+        </view>
+        <view class="loading-more-state4-out-right">
+            <view class="loading-more-out-message-intro">{{loadingbox.text1}}</view>
+            <view class="loading-more-state3-text">¥ {{loadingbox.price}}</view>
+            <view class="loading-more-out-message-place2">
+                <view class="loading-more-out-message-place-left">{{loadingbox.where}}</view>
+                <view class="loading-more-out-message-place-right">{{loadingbox.time}}</view>
+            </view>
+        </view>
+    </view>
+</template>
+
+<template name="freeload">
+    <view class="gift-loading-all-box2" wx:for="{{ giftLoadingBoxs}}" wx:for-item="item" wx:key="key" wx:for-index="index">
+        <view class="gift-loading-all-box2-out">
+            <image class="gift-loading-all-img2" src="{{ item.messImg }}"></image>
+            <view class="gift-loading-all-box-bottom">
+                <view class="gift-user-box">
+                    <image class="gift-user-img" src="{{ item.userImg }}"></image>
+                    <view class="gift-user-name">{{ item.userName }}</view>
+                </view>
+                <view class="gift-name">{{ item.giftName }}</view>
+                <view class="gift-message">
+                    <view class="gift-message-left">
+                        <image src="http://www.gether.cn/zhuanzhuan/image/gift/index/start.png" class="gift-message-left-img"></image>
+                        <view class="gift-message-left-text">{{ item.num }}可兑换</view>
+                    </view>
+                    <view class="gift-message-right" bindtap="giftRightActive" data-bindindex = "{{ index }}">
+                        <image src="{{ item.img2 }}" class="gift-message-right-img"></image>
+                        <text class="gift-message-right-text">{{ item.text }}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

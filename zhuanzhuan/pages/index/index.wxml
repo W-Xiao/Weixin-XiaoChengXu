@@ -1,0 +1,547 @@
+<!--index.wxml-->
+<!-- 导航栏 -->
+<import src="../template/template.wxml" />
+<scroll-view scroll-y="true" class="sell-box-scroll" bindscrolltoupper = "upper"> 
+<view class='top'>
+    <view class='top-btn' bindtap="menuStateBtn">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class='top-text {{ currentTab == 0 ? "change" : ""}}' data-current = "0" bindtap = 'swichNav'>卖二手</view>
+    <view class='top-text {{ currentTab == 1 ? "change" : ""}}' data-current = "1" bindtap = 'swichNav'>淘好货</view>
+    <view class='top-text {{ currentTab == 2 ? "change" : ""}}' data-current = "2" bindtap = 'swichNav'>免费领</view>
+    <navigator class='top-btn' url="/pages/search/search">
+        <image class='top-left-img' src="http://www.gether.cn/zhuanzhuan/image/top-right-img.png"></image>
+    </navigator>
+</view>
+
+<!-- 内容块 -->
+<!-- 卖二手 -->
+  <scroll-view class='sell-box-out {{currentTab == 0 ? "" : "sell-box-out-hidden"}}' data-current = "0" scroll-top = "{{ sellTopNum }}">
+      <view class="sell-box">
+        <!-- 顶部 -->
+        <view class="sell-box-top">
+          <!-- 四个标题 -->
+          <view class="sell-box-top-icon">
+            <navigator class="sell-flex-box" wx:for="{{topIcons}}" wx:for-item="topIcon" wx:key="key" url="{{topIcon.Fn}}">
+              <view class="{{topIcon.css}}">{{topIcon.text}}</view>
+              <view class="out-sell-menu">
+                <view class="out-sell-menu-div {{topIcon.cs1}}"></view>
+                <view class="sell-box-bias-line {{topIcon.cs2}}"></view>
+                <image class="sell-box-img" src="{{topIcon.img}}"></image>
+              </view>
+              <view class="sell-text">{{topIcon.name}}</view>
+            </navigator>
+          </view>
+          <!-- 地图部分 -->
+          <view class="sell-box-top-map">
+            <view class="map-left-box">
+              <view class="map-img-div"><image src="http://www.gether.cn/zhuanzhuan/image/map-nav.png" class="map-nav-img"></image></view>
+              <view class="map-adress">{{adressName}}</view>
+              <view class="map-person-num">附近<text class="map-num-color">{{personNum}}</text>人在卖二手</view>
+            </view>
+            <view class="map-right-box">
+              <image class="map-image" src="{{mapUserSrc}}"></image>
+              <image class="map-image" src="{{mapUserSrc1}}"></image>
+              <image class="map-image" src="{{mapUserSrc2}}"></image>
+            </view>
+          </view>
+        </view>
+
+   <!-- 固定按钮 -->
+      <view class='sell-box-fixed-btn  {{ sellBoxHide == 1 ? "none" : ""}}'>
+        <image src="http://www.gether.cn/zhuanzhuan/image/click-img.png" class="sell-box-fixed-img"></image>
+        <view class="sell-box-hid-btn" bindtap="sellBoxHid">x</view>
+      </view>
+        <!-- 中部 -->
+        <view class="sell-box-center">
+          <view class="sell-box-center-topic">旧手机1天保你卖出</view>
+          <view class="sell-box-center-top">
+            <view class="sell-phone-box">
+              <view class="sell-phone-first-text">
+                <image src="http://www.gether.cn/zhuanzhuan/image/phone.png" class="sell-phone-box-image"></image>
+                检测到你的手机型号是
+              </view>
+              <view class="sell-phone-text-div"><view class="sell-phone-box-text">{{phone}}</view>＞</view>
+            </view>
+          </view>
+           <view class="sell-box-center-top">
+            <view class="sell-phone-box">
+              <view class="sell-phone-first-text">
+                <image src="http://www.gether.cn/zhuanzhuan/image/pay.png" class="sell-phone-box-image"></image>
+                近7天成交价
+              </view>
+              <view class="sell-phone-text-div"><view class="sell-phone-box-text">{{phonePay}}</view>＞</view>
+            </view>
+          </view>
+          <view class="sell-box-center-bottom">
+            <navigator class="old-phone-btn" url="/pages/sellPages/sellSecond/sellSecond">旧手机换钱</navigator>
+            <swiper class="old-phone-slider-div" vertical="{{true}}" interval="2000" duration="1000" circular="{{true}}" autoplay="{{true}}">
+              <swiper-item class="old-phone-slider">最大二手手机平台 卖出全网最高价</swiper-item>
+              <swiper-item class="old-phone-slider">
+                <view class="slidertwo-left">
+                  <view>500+</view>专业质检师为省心卖护航
+                </view>
+                <view class="slidertwo-right" wx:for="{{sliderImgs}}" wx:for-item="sliderImg" wx:key="key">
+                  <image class="slidertwo-right-img" src="{{sliderImg.img}}"></image>
+                </view>
+              </swiper-item>
+            </swiper>
+          </view>
+        </view>
+        
+        <!-- 底部 -->
+        <view class="sell-box-bottom">
+          <view class="sell-box-make-money">
+            <view class="sell-box-center-topic sell-box-bottom-out-div">赚钱专区</view>
+            <view class="sell-box-img-div">
+              <image src="http://www.gether.cn/zhuanzhuan/image/make-money/left.png" class="sell-money-img"></image>
+              <image src="http://www.gether.cn/zhuanzhuan/image/make-money/right.png" class="sell-money-img"></image>
+            </view>
+          </view>
+          <view class="sell-box-best-sell">
+            <view class="sell-box-center-topic sell-box-bottom-out-div">这些二手最好卖</view>
+              <view class="sell-box-best-sell-div">
+                <template is="sellIcon" data="{{...item}}" wx:for="{{sellBoxs}}" wx:key="key"></template>
+              </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="sell-box-publish-btn-box">
+        <view class="sell-box-publish-btn-box-left">+</view>
+        <view class="sell-box-publish-btn-box-right">一键发布闲置</view>
+      </view>
+  </scroll-view>
+
+<!-- 淘好货 -->
+<scroll-view class='taohaohuo {{ currentTab == 1 ? "" : "none"}}' data-current = "1" scroll-y="{{true}}"  bindscrolltolower="loadmore" scroll-top="{{ topNum }}">
+  <!-- 顶部 -->
+  <view class="thh-top-box">
+    <view class="taohaohuo-input">
+      <image src="http://www.gether.cn/zhuanzhuan/image/taohaohuo/t-biger.png" class="thh-input-img"></image>苹果6
+    </view>
+    <view class="thh-top-icon">
+      <navigator class="thh-top-icon-out" wx:for="{{topIconOuts}}" wx:for-item="topIconOut" wx:key="key" url="{{topIconOut.url}}">
+        <view class="{{topIconOut.css}}">
+          <image src="{{topIconOut.src}}" class="thh-top-icon-out-left-img"></image>
+        </view>
+        <view class="thh-top-icon-out-right">
+          <view class="thh-top-icon-out-right-text1">{{topIconOut.text1}}</view>
+          <view class="thh-top-icon-out-right-text2">{{topIconOut.text2}}</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+
+  <!-- 三个广告图 -->
+  <view class="thh-center-box">
+    <view class="thh-center-box-left">
+      <image src="http://www.gether.cn/zhuanzhuan/image/taohaohuo/btn1.png" class="thh-center-box-left-img"></image>
+    </view>
+    <view class="thh-center-box-right">
+      <image class="thh-center-box-right-img" src="http://www.gether.cn/zhuanzhuan/image/taohaohuo/btn2.png"></image>
+      <image class="thh-center-box-right-img" src="http://www.gether.cn/zhuanzhuan/image/taohaohuo/btn3.png"></image>
+    </view>
+  </view>
+
+  <!-- 个人二手手机 -->
+  <view class="thh-bottom-box">
+    <view class="thh-bottom-box-top">
+      <view class="thh-bottom-box-top-left">个人二手手机</view>
+      <view class="thh-bottom-box-top-center">平台验机 30天质保</view>
+      <navigator class="thh-bottom-box-top-nav"><view class="thh-bottom-box-top-right">查看全部></view></navigator>
+    </view>
+    <scroll-view class="thh-bottom-box-phone-topic" scroll-x="{{true}}">
+      <view class='thh-bottom-box-phone-topic-phone-name {{ thhBottomTab == index ? "thh-bottom-box-phone-topic-phone-name-active":""}}' wx:for="{{thhBottomBoxPhoneTopics}}"  wx:for-item="thhBottomBoxPhoneTopic" wx:key="key" data-thhbottom = "{{index}}" bindtap = 'thhState' >{{thhBottomBoxPhoneTopic.text}}</view>
+    </scroll-view>
+
+    <scroll-view class='thh-bottom-box-phone-box {{ thhBottomTab == index ? "":"none"}}' scroll-x="{{true}}" wx:for="{{thhBottomBoxPhoneBoxs}}" wx:for-item="thhBottomBoxPhoneBox" wx:key="key">
+      <view class="thh-bottom-box-line" wx:for="{{thhBottomBoxPhoneBox.thhBottomBoxLines}}" wx:for-item="thhBottomBoxLine" wx:key="key">
+        <view class="thh-bottom-box-phone-box-cover">
+            <view class="thh-bottom-box-phone-box-out" wx:for="{{thhBottomBoxLine.divs}}" wx:for-item="div" wx:key="key">
+                <view class="thh-bottom-box-phone-box-out-left">
+                    <image class="thh-bottom-box-phone-box-out-left-img" src="{{div.img}}"></image>
+                </view>
+                <view class="thh-bottom-box-phone-box-out-right">
+                    <view class="thh-bottom-box-phone-box-out-right-text1">{{div.phone}}</view>
+                    <view class="thh-bottom-box-phone-box-out-right-text2">¥<text>{{div.price}}</text></view>
+                </view>
+            </view>
+        </view>   
+      </view>
+      <view class="thh-bottom-box-line" wx:for="{{thhBottomBoxPhoneBox.thhBottomBoxLineTwos}}" wx:for-item="thhBottomBoxLineTwo" wx:key="key">
+          <view class="thh-bottom-box-phone-box-cover">
+              <view class='thh-bottom-box-phone-box-out {{thhBottomBoxLineTwo.css}}'>
+                <view class="thh-bottom-box-phone-box-out-left">
+                    <image class="thh-bottom-box-phone-box-out-left-img" src="{{thhBottomBoxLineTwo.img}}"></image>
+                </view>
+                <view class="thh-bottom-box-phone-box-out-right">
+                    <view class="thh-bottom-box-phone-box-out-right-text1">{{thhBottomBoxLineTwo.phone}}</view>
+                    <view class="thh-bottom-box-phone-box-out-right-text2">¥<text>{{thhBottomBoxLineTwo.price}}</text></view>
+                </view>
+              </view>
+              <view class="thh-bottom-box-phone-box-out2">
+                <view class="thh-bottom-box-phone-box-out2-text">查看全部</view>
+                <view class="thh-bottom-box-phone-box-out2-text">{{thhBottomBoxLineTwo.text}}</view>
+              </view>
+          </view>
+        </view>
+    </scroll-view>
+
+    <view class="thh-bottom-box-bottom-row">
+      <image class="thh-bottom-box-bottom-row-left" src="http://www.gether.cn/zhuanzhuan/image/taohaohuo/true.png"></image>
+      <view class="thh-bottom-box-bottom-row-center">转转&富士康联合制定验机标准</view>
+      <view class="thh-bottom-box-bottom-row-right">
+        <image src="http://www.gether.cn/zhuanzhuan/image/engineer-image/engineer1.jpg" class="thh-bottom-box-bottom-row-right-img"></image>
+        <image src="http://www.gether.cn/zhuanzhuan/image/engineer-image/engineer2.jpg" class="thh-bottom-box-bottom-row-right-img"></image>
+        <image src="http://www.gether.cn/zhuanzhuan/image/engineer-image/engineer3.jpg" class="thh-bottom-box-bottom-row-right-img"></image>
+        <view class="thh-bottom-box-bottom-row-right-text">></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 二手书 -->
+   <view class="thh-bottom-box">
+      <view class="thh-bottom-box-top">
+        <view class="thh-bottom-box-top-left">二手书</view>
+        <view class="thh-bottom-box-top-center">转转有书</view>
+        <navigator class="thh-bottom-box-top-nav"><view class="thh-bottom-box-top-right">查看全部></view></navigator>
+      </view>
+      <scroll-view class="thh-bottom-box-phone-topic" scroll-x="{{true}}">
+        <view class='thh-bottom-box-phone-topic-phone-name2 {{ thhBottomTab2 == index ? "thh-bottom-box-phone-topic-phone-name-active":""}}' wx:for="{{thhBottomPhoneName2s}}" wx:for-item="thhBottomPhoneName2" wx:key="key" data-thhbottomtwo = "{{index}}" bindtap = 'thhState2' >{{thhBottomPhoneName2.text}}</view>
+      </scroll-view>
+
+    <view class='thh-bottom-box-books {{ thhBottomTab2 == index ? "":"none"}}' wx:for="{{thhBottomBoxBooks}}" wx:for-item="thhBottomBoxBook" wx:key="key">
+       <view class="thh-bottom-box-books-out">
+        <view class="thh-bottom-box-books-top-box" wx:for="{{thhBottomBoxBook.thhBottomBoxBooksTopBoxs}}" wx:for-item="thhBottomBoxBooksTopBox" wx:key="key">
+            <image src="{{thhBottomBoxBooksTopBox.img}}" class="thh-bottom-box-books-img"></image>
+            <view class="thh-bottom-box-books-top-box-text">{{thhBottomBoxBooksTopBox.text}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 加载更多 -->
+  <view class="thh-bottom-box-loading">
+    <scroll-view class="thh-bottom-box-loading-scroll" scroll-x="{{true}}">
+      <view class='thh-bottom-box-loading-scroll-text {{ thhBottomCommodity == index ? "thh-bottom-box-loading-scroll-text-active":""}}' wx:for="{{commoditytexts}}" wx:key="key" wx:for-item="commoditytext" data-thhbottomcommodity = "{{index}}" bindtap = 'comState'>{{commoditytext.text}}</view>
+    </scroll-view>
+    <view class='thh-bottom-box-loading-commodity {{ thhBottomCommodity == index ? "" : "none"}}' wx:for="{{loadingCommoditys}}" wx:for-item="loadingCommodity" wx:key="key">
+      <view class="commodity-out-box" wx:for="{{loadingCommodity.commodityOutBoxs}}" wx:for-item="commodityOutBox" wx:key="key">
+        <view class="commodity-box">
+            <image class="commodity-box-img" src="{{commodityOutBox.img}}"></image>
+            <view class="commodity-box-text">{{commodityOutBox.text}}</view>
+        </view>
+      </view>
+    </view>
+  <!-- 底部加载项 -->
+    <!-- 附近 -->
+    <view class="loading-more-state0" wx:if="{{ thhBottomCommodity == 0 }}">
+      <view class="loading-more-state0-out" wx:for="{{loadingboxs}}" wx:for-item="loadingbox" wx:key="key">
+        <view class="loading-more-state0-out-left">
+          <image class="loading-more-state0-out-left-img" src="{{loadingbox.img}}"></image>
+        </view>
+        <view class="loading-more-state0-out-right">
+          <view class="loading-more-state0-out-right-top">{{loadingbox.text}}</view>
+          <view class="loading-more-state0-out-right-circle">
+            <text class="loading-more-state0-out-right-circle-text">{{loadingbox.text2}}</text>
+          </view>
+          <view class="loading-more-state0-out-right-price">¥{{loadingbox.price}}</view>
+          <view class="loading-more-state0-out-right-bottom">
+            <view class="loading-more-state0-out-right-bottom-left">{{loadingbox.distance}}</view>
+            <view class="loading-more-state0-out-right-bottom-right">{{loadingbox.hours}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 手机 -->
+    <view class="loading-more-scroll" wx:if="{{ thhBottomCommodity == 1 }}">
+      <view class="thh-bottom-box-loading-more" wx:for="{{loadingboxs}}" wx:for-item="loadingbox" wx:key="key">
+        <view class="thh-bottom-box-loading-more-out">
+          <image class="thh-bottom-box-loading-more-out-image" src="{{loadingbox.img}}"></image>
+          <view class="thh-bottom-box-loading-more-out-message">
+            <view class="loading-more-out-message-intro">
+              {{loadingbox.text}}
+            </view>
+            <view class="loading-more-out-message-mark" wx:for="{{loadingbox.divs}}" wx:for-item="item" wx:key="key">
+              <text class="loading-more-out-message-mark-text">{{item}}</text>
+            </view>
+            <view class="loading-more-out-message-number">
+              <view class="loading-more-out-message-number-left">¥{{loadingbox.price}}</view>
+              <view class="loading-more-out-message-number-right">
+                <view class="loading-more-out-message-number-right-intro">30天质保</view>
+                <view class="loading-more-out-message-number-right-intro">支持验机</view>
+              </view>
+            </view>
+            <view class="loading-more-out-message-place">
+              <view class="loading-more-out-message-place-left">{{loadingbox.where}}</view>
+              <view class="loading-more-out-message-place-right">{{loadingbox.time}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 图书 -->
+    <view class="loading-more-state0" wx:if="{{ thhBottomCommodity == 2 }}">
+      <view class="loading-more-state0-out" wx:for="{{loadingboxs}}" wx:for-item="loadingbox" wx:key="key">
+        <view class="loading-more-state0-out-left">
+          <image class="thh-bottom-box-loading-more-out-image" src="{{loadingbox.img}}"></image>
+        </view>
+        <view class="loading-more-state2-out-right">
+          <view class="loading-more-state2-text1">{{loadingbox.book}}</view>
+          <view class="loading-more-state2-text2">{{loadingbox.writer}}</view>
+          <view class="loading-more-state2-text3">豆瓣评分:{{loadingbox.num}}</view>
+          <view class="loading-more-state2-outbox">
+            <view class="state2-outbox-text1">二手价 ¥ <text class="outbox-text1-color">{{loadingbox.price}}</text> 原价39
+              <view class="state2-outbox-text2">{{loadingbox.discount}}</view>
+            </view>
+            <image src="http://www.gether.cn/zhuanzhuan/image/taohaohuo/loading/shoppingcar.png" class="state2-outbox-img"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 母婴用品 -->
+    <view class="loading-more-state0" wx:if="{{ thhBottomCommodity == 3 }}">
+      <view class="loading-more-state0-out" wx:for="{{loadingboxs}}" wx:for-item="loadingbox" wx:key="key">
+        <view class="loading-more-state0-out-left">
+          <image class="thh-bottom-box-loading-more-out-image" src="{{loadingbox.img}}"></image>
+        </view>
+        <view class="loading-more-state3-out-right">
+          <view class="loading-more-out-message-intro">{{loadingbox.text1}}</view>
+          <view class="loading-more-state3-box">
+            <view class="laoding-more-state3-box-text" wx:for="{{loadingbox.textboxs}}" wx:for-item="textbox" wx:key="key">{{textbox.text}}</view>
+          </view>
+          <view class="loading-more-state3-text">¥ {{loadingbox.price}}</view>
+          <view class="loading-more-out-message-place2">
+              <view class="loading-more-out-message-place-left">{{loadingbox.where}}</view>
+              <view class="loading-more-out-message-place-right">{{loadingbox.time}}</view>
+            </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 平板电脑 -->
+    <view class="loading-more-state0" wx:if="{{thhBottomCommodity == 4}}">
+      <template is="loading" data="{{loadingboxs}}"></template>
+    </view>
+
+    <!-- 电脑 -->
+    <view class="loading-more-state0" wx:if="{{thhBottomCommodity == 5}}">
+      <template is="loading" data="{{loadingboxs}}"></template>
+    </view>
+
+   <!-- 家用电器 -->
+    <view class="loading-more-state0" wx:if="{{thhBottomCommodity == 6}}">
+      <template is="loading" data="{{loadingboxs}}"></template>
+    </view>
+
+   <!-- 家居家具 -->
+    <view class="loading-more-state0" wx:if="{{thhBottomCommodity == 7}}">
+      <template is="loading" data="{{loadingboxs}}"></template>
+    </view>
+
+   <!-- 运动户外 -->
+    <view class="loading-more-state0" wx:if="{{thhBottomCommodity == 8}}">
+      <template is="loading" data="{{loadingboxs}}"></template>
+    </view>
+
+   <!-- 办公用品 -->
+    <view class="loading-more-state0" wx:if="{{thhBottomCommodity == 9}}">
+      <template is="loading" data="{{loadingboxs}}"></template>
+    </view>
+
+   <!-- 车载设备 -->
+    <view class="loading-more-state0" wx:if="{{thhBottomCommodity == 10}}">
+      <template is="loading" data="{{loadingboxs}}"></template>
+    </view>
+
+   <!-- 玩具乐器 -->
+    <view class="loading-more-state0" wx:if="{{thhBottomCommodity == 11}}">
+      <template is="loading" data="{{loadingboxs}}"></template>
+    </view>
+
+   <!-- 票务卡劵 -->
+    <view class="loading-more-state0" wx:if="{{thhBottomCommodity == 12}}">
+      <template is="loading" data="{{loadingboxs}}"></template>
+    </view>
+  </view>
+
+  <!-- 正在加载 -->
+  <view class="loading-hidden" hidden="{{isHideLoadMore}}">
+    <image src="http://www.gether.cn/zhuanzhuan/image/taohaohuo/loading/1.png" class="loading-hidden-img"></image>
+    <view>加载中...</view>
+  </view>
+  
+  <!-- 返回顶部 -->
+  <view class="returntop" hidden="{{returnTop}}" bindtap="returnScrollTop">
+    <image src="http://www.gether.cn/zhuanzhuan/image/taohaohuo/loading/returntop.png" class="returntop-img"></image>
+  </view>
+
+</scroll-view>
+
+<!-- 免费领 -->
+<scroll-view class='mianfeiling {{ currentTab == 2 ? "" : "none"}}' data-current = "2" scroll-y="{{ true }}" bindscrolltolower = "freeloadmore" scroll-top ="{{ freetopNum }}" bind:touchstart = "touchMove" bind:touchend= "touchMoveReturn">
+  <!-- 顶部输入框和轮播 -->
+  <view class="gift-top">
+    <view class="gift-top-search">
+      <view class="gift-top-text">
+        <image src="http://www.gether.cn/zhuanzhuan/image/gift/index/search.png" class="gift-search-img"></image> 大家都在搜: 手机
+      </view>
+    </view>
+    <swiper class="gift-top-swiper" autoplay="{{true}}" circular="{{true}}" interval="1500" duration="1000">
+      <swiper-item class="gift-top-swiper-item" wx:for="{{giftSwipers}}" wx:for-item="giftSwiper" wx:key="key">
+        <image src="{{giftSwiper.img}}" class="gift-swiper-img"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 领取星星板块 -->
+  <view class="gift-start">
+    <view class="gift-start-top">
+      <view class="gift-start-top-text-black">欢乐送</view>
+      <view class="gift-start-top-circle">·</view>
+      <view class="gift-start-top-text">送宝贝得星星</view>
+      <view class="gift-start-top-circle">·</view>
+      <view class="gift-start-top-text">快递上门取货</view>
+      <view class="gift-start-top-circle">·</view>
+      <view class="gift-start-top-text">星星换宝贝</view>
+    </view>
+    <view class="gift-start-bottom">
+      <view class="gift-start-bottom-left-box">
+        <text class="gift-start-left-text" space="nbsp">你有207颗星,可白拿7637件宝贝  ></text>
+      </view>
+      <view class="gift-start-bottom-right-box">
+        <image class="gift-start-right-img" src="http://www.gether.cn/zhuanzhuan/image/gift/index/start.png"></image>
+        <view class="gift-start-right-text">领星星</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 菜单栏 -->
+  <view class="gift-menu">
+    <scroll-view class="gift-menu-scroll" scroll-x="{{true}}">
+      <view class="gift-menu-text" wx:for="{{giftMenuTexts}}" wx:for-item="giftMenuText" wx:key="key" data-gift="{{ index }}" bindtap="giftLineMove">{{giftMenuText.text}}</view>
+      <view class="gift-menu-line" style="left: {{ giftLeft }}"></view>
+    </scroll-view>
+    <view class="gift-menu-change">
+      <image src="http://www.gether.cn/zhuanzhuan/image/gift/index/down.png" class="gift-change-img"></image>
+    </view>
+  </view>
+
+  <!-- 底部加载栏 -->
+    <!-- 全部 -->
+    <view class="gift-loading" wx:if="{{ gift == 0 }}">
+      <view class="gift-loading-all-box">
+        <image src="http://www.gether.cn/zhuanzhuan/image/gift/index/free1.png" class="gift-loading-all-img"></image>
+      </view>
+      <view class="gift-loading-all-box">
+        <image src="http://www.gether.cn/zhuanzhuan/image/gift/index/free2.png" class="gift-loading-all-img"></image>
+      </view>
+      <template is="freeload" data="{{giftLoadingBoxs}}"></template>
+    </view>
+
+    <!-- 推荐 -->
+    <view class="gift-loading" wx:if="{{ gift == 1}}">
+      <view class="gift-loading-all-box">
+        <image src="http://www.gether.cn/zhuanzhuan/image/gift/index/free3.png" class="gift-loading-all-img"></image>
+      </view>
+      <view class="gift-loading-all-box">
+        <image src="http://www.gether.cn/zhuanzhuan/image/gift/index/free4.png" class="gift-loading-all-img"></image>
+      </view>
+      <template is="freeload" data="{{giftLoadingBoxs}}"></template>
+    </view>
+
+    <!-- 数码 -->
+    <view class="gift-loading" wx:if="{{ gift == 2}}">
+      <view class="gift-loading-all-box">
+        <image src="http://www.gether.cn/zhuanzhuan/image/gift/index/free5.png" class="gift-loading-all-img"></image>
+      </view>
+      <view class="gift-loading-all-box">
+        <image src="http://www.gether.cn/zhuanzhuan/image/gift/index/free6.png" class="gift-loading-all-img"></image>
+      </view>
+      <template is="freeload" data="{{giftLoadingBoxs}}"></template>
+    </view>
+
+    <!-- 家居 -->
+    <view class="gift-loading" wx:if="{{ gift == 3}}">
+      <template is="freeload" data="{{giftLoadingBoxs}}"></template>
+    </view>
+
+    <!-- 母婴 -->
+    <view class="gift-loading" wx:if="{{ gift == 4}}">
+      <template is="freeload" data="{{giftLoadingBoxs}}"></template>
+    </view>
+
+    <!-- 服装 -->
+    <view class="gift-loading" wx:if="{{ gift == 5}}">
+      <template is="freeload" data="{{giftLoadingBoxs}}"></template>
+    </view>
+
+    <!-- 美妆 -->
+    <view class="gift-loading" wx:if="{{ gift == 6}}">
+      <template is="freeload" data="{{giftLoadingBoxs}}"></template>
+    </view>
+
+    <!-- 图书 -->
+    <view class="gift-loading" wx:if="{{ gift == 7}}">
+      <template is="freeload" data="{{giftLoadingBoxs}}"></template>
+    </view>
+
+    <!-- 其他 -->
+    <view class="gift-loading" wx:if="{{ gift == 8}}">
+      <template is="freeload" data="{{giftLoadingBoxs}}"></template>
+    </view>
+
+  <!-- 返回顶部 -->
+  <view class="returntop" hidden="{{returnTop2}}" bindtap="returnScrollTop2">
+    <image src="http://www.gether.cn/zhuanzhuan/image/taohaohuo/loading/returntop.png" class="returntop-img"></image>
+  </view>
+
+  <!-- 底部菜单 -->
+  <view class="gift-fixe-menu">
+    <view class="gift-fixe-menu-box">
+      <image class="gift-fixe-menu-box-img" src="http://www.gether.cn/zhuanzhuan/image/gift/index/house-active.png"></image>
+      <view class="gift-fixe-menu-box-text">首页</view>
+    </view>
+    <view class="gift-fixe-menu-box">
+      <view class="gift-fixe-menu-box-circle">+</view>
+      <view class="gift-fixe-menu-box-text">送闲置</view>
+    </view>
+    <view class="gift-fixe-menu-box">
+      <image class="gift-fixe-menu-box-img" src="http://www.gether.cn/zhuanzhuan/image/gift/index/my.png"></image>
+      <view class="gift-fixe-menu-box-text">我的</view>
+    </view>
+  </view>
+
+  <!-- 图片按钮 -->
+  <view class="gift-fixe-img-menu" style="left: {{ giftFixeLeft }}" hidden = "{{giftMenuHide}}">
+    <image class="gift-fixe-img-menu-img" src="http://www.gether.cn/zhuanzhuan/image/gift/index/click.png"></image>
+    <view class="gift-fixe-hide-menu" bindtap = "giftGet">x</view>
+  </view>
+</scroll-view>
+
+<!-- 隐藏盒子 -->
+<view class='cover {{state == 1 ? "cover-show" : ""}}' bindtap="changeState"></view>
+<!-- 左侧隐藏个人信息 -->
+<view class='left-menu {{state == 1? "left-menu-show" : ""}}'>
+  
+  <!-- 用户信息 -->
+  <view class="user-message">
+    <view class="user-image"><open-data type="userAvatarUrl"></open-data></view>
+    <view class="user-name"><open-data type="userNickName"></open-data></view>
+    <view class="user-text">虽然没赚到钱,没事常来转转</view>
+  </view>
+
+  <!-- 隐藏菜单栏 -->
+  <view class="hide-menu">
+    <view class="each-menu" wx:for="{{menus}}" wx:for-item="menu" wx:key="key">
+      <image class="each-menu-style" src="{{menu.url}}"></image>
+      <view>{{menu.name}}</view>
+    </view>
+  </view>
+
+</view>
+</scroll-view>
